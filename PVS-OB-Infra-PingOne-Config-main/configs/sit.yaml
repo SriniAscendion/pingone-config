@@ -1,0 +1,88 @@
+base_url: "https://api.pingone.eu"
+env_id: "68dd20e2-8c6d-49f7-9565-157aab283934"
+bearer_token : "xxxx"
+applications:
+
+device_authentication_policies:
+  - name: "TSB SIT MFA Policy"
+    authentication:
+      deviceSelection: "DEFAULT_TO_FIRST"
+    newDeviceNotification: "SMS_THEN_EMAIL"
+    sms:
+      enabled: true
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 30
+            timeUnit: "MINUTES"
+        lifeTime:
+          duration: 30
+          timeUnit: "MINUTES"
+        otpLength: 6
+    email:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 0
+            timeUnit: "MINUTES"
+        lifeTime:
+          duration: 30
+          timeUnit: "MINUTES"
+        otpLength: 6
+    mobile:
+      enabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 2
+            timeUnit: "MINUTES"
+    totp:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 2
+            timeUnit: "MINUTES"
+    voice:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 0
+            timeUnit: "MINUTES"
+        lifeTime:
+          duration: 30
+          timeUnit: "MINUTES"
+        otpLength: 6
+    fido2:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      failure:
+        count: 3
+        coolDown:
+          duration: 2
+          timeUnit: "MINUTES"
+    rememberMe:
+      web:
+        enabled: false
+        lifeTime:
+          duration: 30
+          timeUnit: "DAYS"
+    forSignOnPolicy: false
+    default: false
