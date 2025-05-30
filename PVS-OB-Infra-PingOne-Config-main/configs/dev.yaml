@@ -1,0 +1,112 @@
+base_url: "https://api.pingone.com"
+env_id: "5d89f23a-abe1-433e-980c-01fe6d56deba"
+encoded_credentials: "NjdlYTY1ZGMtMzc3ZS00MWU3LTg3OGMtMWQ3ZWE3MjY3OGYxOmlTbUhDbFR+cERnS2RoZ1VmTXRqM1ZCQkNfM25fODhnWjR+SE56Tnh5a2h+Y0dwQTYuWDl4U1BHZUNfS2N1XzY"
+
+populations:
+  - name: "NA Eng Austin"
+    description: "NA Engineering"
+    default: false
+    passwordPolicy:
+      id: "a5d0aa96-94cc-4432-8d59-3b4bcf79c7ae"
+
+user:
+  email: "testuser1@tsb.com"
+  name:
+    given: "testuser1"
+    family: "test"
+  username: "test.user1"
+  department: "engineering"
+  locales:
+    - "en-US"
+
+device_authentication_policies:
+  - name: "TSB DEV MFA Policy1"
+    authentication:
+      deviceSelection: "DEFAULT_TO_FIRST"
+    newDeviceNotification: "SMS_THEN_EMAIL"
+    sms:
+      enabled: true
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 30
+            timeUnit: "MINUTES"
+        lifeTime:
+          duration: 30
+          timeUnit: "MINUTES"
+        otpLength: 6
+    email:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 0
+            timeUnit: "MINUTES"
+        lifeTime:
+          duration: 30
+          timeUnit: "MINUTES"
+        otpLength: 6
+    mobile:
+      enabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 2
+            timeUnit: "MINUTES"
+    totp:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 2
+            timeUnit: "MINUTES"
+    voice:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      otp:
+        failure:
+          count: 3
+          coolDown:
+            duration: 0
+            timeUnit: "MINUTES"
+        lifeTime:
+          duration: 30
+          timeUnit: "MINUTES"
+        otpLength: 6
+    fido2:
+      enabled: false
+      pairingDisabled: false
+      promptForNicknameOnPairing: false
+      failure:
+        count: 3
+        coolDown:
+          duration: 2
+          timeUnit: "MINUTES"
+    rememberMe:
+      web:
+        enabled: false
+        lifeTime:
+          duration: 30
+          timeUnit: "DAYS"
+    forSignOnPolicy: false
+    default: false
+
+
+
+pingfederate_connections:
+  name: "TSB DEV Ping Federate Connection 1"
+  description: "Connection between PingOne and PingFederate for DEV"
+  enabled: true
+  type: "PING_FEDERATE"
