@@ -1,63 +1,33 @@
 name: Run Orchestrate Script
 
 on:
-
   workflow_dispatch:
-
     inputs:
-
       env:
-
         description: 'Environment name'
-
         required: true
-
       client_secret:
-
         description: 'Client secret for authentication'
-
         required: true
-
- 
 
 jobs:
-
   run-orchestrate:
-
     runs-on: ubuntu-latest
 
- 
-
     steps:
-
     - name: Checkout repository
-
       uses: actions/checkout@v2
 
- 
-
     - name: Set up Python
-
       uses: actions/setup-python@v2
-
       with:
-
         python-version: '3.13.2'
 
- 
-
     - name: Install dependencies
-
       run: |
-
         python -m pip install --upgrade pip
-
         pip install -r requirements.txt
 
- 
-
     - name: Run orchestrate.py
-
       run: |
-
-        python3 orchestrate.py ${{ github.event.inputs.env }} --client_secret ${{ github.event.inputs.client_secret }}
+        python3 scripts/orchestrate.py main --config config/dev.yaml --client_secret ${{ github.event.inputs.client_secret }}
