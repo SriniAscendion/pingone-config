@@ -1,13 +1,12 @@
-base_url: "https://api.pingone.com"
-env_id: "5d89f23a-abe1-433e-980c-01fe6d56deba"
-encoded_credentials: "NjdlYTY1ZGMtMzc3ZS00MWU3LTg3OGMtMWQ3ZWE3MjY3OGYxOmlTbUhDbFR+cERnS2RoZ1VmTXRqM1ZCQkNfM25fODhnWjR+SE56Tnh5a2h+Y0dwQTYuWDl4U1BHZUNfS2N1XzY"
+base_url: "https://api.pingone.eu"
+env_id: "68dd20e2-8c6d-49f7-9565-157aab283934"
 
 populations:
   - name: "NA Eng Austin"
     description: "NA Engineering"
     default: false
     passwordPolicy:
-      id: "a5d0aa96-94cc-4432-8d59-3b4bcf79c7ae"
+      id: "56ebecc5-ed06-4b23-997d-afa7e1830960"
 
 user:
   email: "testuser1@tsb.com"
