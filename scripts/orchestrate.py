@@ -16,8 +16,8 @@ def main(env: str, client_secret: str):
     logger.info(f"Orchestration started for environment: {env}")
 
     try:
-        config_path = f"configs/{env}"
-        config = load_config(config_path)
+        config_path = f"configs/{env}.yaml"
+        config = load_config(env)
         base_url = config["base_url"]
         env_id = config["env_id"]
         encoded_credentials = client_secret
