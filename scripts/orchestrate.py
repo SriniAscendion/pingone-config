@@ -12,10 +12,11 @@ from scripts.get_token import get_token
 
 logger = setup_logging()
 
-def main(env: str, config_path: str, client_secret: str):
+def main(env: str, client_secret: str):
     logger.info(f"Orchestration started for environment: {env}")
 
     try:
+        config_path = f"configs/{env}.yaml"
         config = load_config(config_path)
         base_url = config["base_url"]
         env_id = config["env_id"]
@@ -52,9 +53,8 @@ def main(env: str, config_path: str, client_secret: str):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Orchestrate PingOne setup")
     parser.add_argument("env", help="Environment name")
-    parser.add_argument("--config", required=True, help="Path to the config file")
     parser.add_argument("--client_secret", required=True, help="Client secret")
 
     args = parser.parse_args()
 
-    main(args.env, args.config, args.client_secret)
+    main(args.env, args.client_secret)
