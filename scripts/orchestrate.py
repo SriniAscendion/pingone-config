@@ -1,5 +1,6 @@
 import sys
 import os
+import argparse
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -49,11 +50,11 @@ def main(env: str, config_path: str, client_secret: str):
         sys.exit(1)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python scripts/orchestrate.py <env> --config <config_path> --client_secret <client_secret>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Orchestrate PingOne setup")
+    parser.add_argument("env", help="Environment name")
+    parser.add_argument("--config", required=True, help="Path to the config file")
+    parser.add_argument("--client_secret", required=True, help="Client secret")
 
-    env_name = sys.argv[1]
-    config_path = sys.argv[3]
-    client_secret = sys.argv[5]
-    main(env_name, config_path, client_secret)
+    args = parser.parse_args()
+
+    main(args.env, args.config, args.client_secret)
