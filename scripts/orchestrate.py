@@ -51,9 +51,11 @@ def main(env: str):
         sys.exit(1)
 
 if __name__ == "__main__":
+    print(f"Arguments: {sys.argv}")
     if len(sys.argv) != 2:
         print("Usage: python scripts/orchestrate.py <env>")
         sys.exit(1)
 
     env_name = sys.argv[1]
     main(env_name)
+
