@@ -7,7 +7,7 @@ populations:
     description: "NA Engineering"
     default: false
     passwordPolicy:
-      id: "a5d0aa96-94cc-4432-8d59-3b4bcf79c7ae"
+      id: "56ebecc5-ed06-4b23-997d-afa7e1830960"
 
 user:
   email: "testuser1@tsb.com"
