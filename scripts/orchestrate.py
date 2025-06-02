@@ -21,7 +21,6 @@ def main(env: str, client_secret: str):
         base_url = config["base_url"]
         env_id = config["env_id"]
         encoded_credentials = client_secret
-
         # Get token using encoded credentials
         token = get_token(encoded_credentials, env_id)
 
