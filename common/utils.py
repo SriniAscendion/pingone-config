@@ -36,7 +36,7 @@ def load_config(env_name: str) -> Dict[str, Any]:
     """
     Load the YAML configuration for the specified environment.
     """
-    config_path = Path(__file__).parent.parent / "configs" / f"{env_name}"
+    config_path = Path(__file__).parent.parent / "configs" / f"{env_name}.yaml"
     if not config_path.exists():
         logging.error(f" Configuration file not found: {config_path}")
         raise FileNotFoundError(f"No config found for environment: {env_name}")
