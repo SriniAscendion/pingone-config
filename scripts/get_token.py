@@ -2,7 +2,7 @@ import requests
 import sys
 
 def get_token(encoded_credentials: str, env_id: str) -> str:
-    url = f"https://auth.pingone.com/{env_id}/as/token"
+    url = f"https://auth.pingone.eu/{env_id}/as/token"
 
     headers = {
         "Authorization": f"Basic {encoded_credentials}",
