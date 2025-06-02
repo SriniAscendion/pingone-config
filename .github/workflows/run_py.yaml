@@ -30,4 +30,4 @@ jobs:
 
     - name: Run orchestrate.py
       run: |
-        python3 scripts/orchestrate.py ${{ github.event.inputs.env }} --config config/dev.yaml --client_secret ${{ github.event.inputs.client_secret }}
+        python3 scripts/orchestrate.py ${{ github.event.inputs.env }} --client_secret ${{ github.event.inputs.client_secret }}
