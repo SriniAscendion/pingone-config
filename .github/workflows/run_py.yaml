@@ -6,10 +6,7 @@ on:
       env:
         description: 'Environment name'
         required: true
-      client_secret:
-        description: 'Client secret for authentication'
-        required: true
-
+        
 jobs:
   run-orchestrate:
     runs-on: ubuntu-latest
